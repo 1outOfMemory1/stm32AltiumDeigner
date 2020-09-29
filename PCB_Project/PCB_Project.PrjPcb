@@ -89,7 +89,7 @@ GenerateClassCluster=0
 DocumentUniqueId=ESLONXHA
 
 [Document4]
-DocumentPath=main.SchDoc
+DocumentPath=all.SchDoc
 AnnotationEnabled=0
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -98,32 +98,15 @@ AnnotateScope=All
 AnnotateOrder=2
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=0
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=NRZNAXWQ
-
-[Document5]
-DocumentPath=all.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
 ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=OKOMWTNY
+DocumentUniqueId=PPXQPTCR
 
 [SearchPath1]
-Path=G:\资料备份\老师3d库\*.*
+Path=G:\资料备份\老师封装3d库\*.*
 IncludeSubFolders=1
 
 [Configuration1]
