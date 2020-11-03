@@ -1,0 +1,145 @@
+/* USER CODE END WHILE */
+HAL_GPIO_WritePin(MYLEDHHH_GPIO_Port, MYLEDHHH_Pin, GPIO_PIN_SET);
+//Delay(0xfffff);
+HAL_Delay(500);
+HAL_GPIO_WritePin(MYLEDHHH_GPIO_Port, MYLEDHHH_Pin, GPIO_PIN_RESET);
+//Delay(0xfffff);
+HAL_Delay(500);
+
+
+//HAL_GPIO_TogglePin(MYLED_GPIO_Port, MYLED_Pin);
+//HAL_Delay(500);
+//HAL_GPIO_TogglePin(MYLED_GPIO_Port, MYLED_Pin);
+//HAL_Delay(500);
+
+
+HAL_GPIO_WritePin(MYLED_GPIO_Port, MYLED_Pin, GPIO_PIN_RESET); // light on 
+HAL_Delay(500);
+HAL_GPIO_WritePin(MYLED_GPIO_Port, MYLED_Pin, GPIO_PIN_SET); // light off
+HAL_Delay(500);
+
+
+
+int i =0;
+for(i=0;i<=10;i++){
+		HAL_GPIO_WritePin(MYLEDHHH_GPIO_Port, MYLEDHHH_Pin, GPIO_PIN_RESET); // light on 
+		HAL_Delay(400*i);
+		HAL_GPIO_WritePin(MYLEDHHH_GPIO_Port, MYLEDHHH_Pin, GPIO_PIN_SET); // light off
+		HAL_Delay(4000 - 400*i);
+}
+
+
+stm32f1xx_hal_tim.c
+/* TIM Update event */
+  if (__HAL_TIM_GET_FLAG(htim, TIM_FLAG_UPDATE) != RESET)
+  {
+    if (__HAL_TIM_GET_IT_SOURCE(htim, TIM_IT_UPDATE) != RESET)
+    {
+      __HAL_TIM_CLEAR_IT(htim, TIM_IT_UPDATE);
+#if (USE_HAL_TIM_REGISTER_CALLBACKS == 1)
+      htim->PeriodElapsedCallback(htim);
+#else
+      HAL_TIM_PeriodElapsedCallback(htim);
+#endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
+    }
+  }
+  
+  
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if(htim->Instance == TIM1){
+		HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance == TIM1){
+		HAL_GPIO_TogglePin(LED0_GPIO_Port, LED0_Pin);
+		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+		HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
+		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
+		HAL_GPIO_TogglePin(LED5_GPIO_Port, LED5_Pin);
+		HAL_GPIO_TogglePin(LED6_GPIO_Port, LED6_Pin);
+		HAL_GPIO_TogglePin(LED7_GPIO_Port, LED7_Pin);
+	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	if(htim->Instance == TIM1){
+		HAL_GPIO_TogglePin(MYLED_GPIO_Port, MYLED_Pin);
+	}
+}
+
+
+
+
+
+HAL_TIM_Base_Start_IT(&htim1);
+
+
+
+
+
+
+
+
+----------------------------------------------------------
+流水灯
+
+int currentLedNum = 0;
+int count = 0;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	GPIO_TypeDef * current_Led_GPIO_Port;
+	uint16_t current_Led_Pin;
+	switch(currentLedNum){
+		case 0: 
+			current_Led_GPIO_Port = LED0_GPIO_Port;
+			current_Led_Pin = LED0_Pin;
+			break;
+		case 1: 			
+			current_Led_GPIO_Port = LED1_GPIO_Port;
+			current_Led_Pin = LED1_Pin;
+			break;
+		case 2: 
+			current_Led_GPIO_Port = LED2_GPIO_Port;
+			current_Led_Pin = LED2_Pin;
+			break;
+		case 3: 
+			current_Led_GPIO_Port = LED3_GPIO_Port;
+			current_Led_Pin = LED3_Pin;
+			break;
+		case 4: 
+			current_Led_GPIO_Port = LED4_GPIO_Port;
+			current_Led_Pin = LED4_Pin;
+			break;
+		case 5: 
+			current_Led_GPIO_Port = LED5_GPIO_Port;
+			current_Led_Pin = LED5_Pin;
+			break;
+		case 6: 
+			current_Led_GPIO_Port = LED6_GPIO_Port;
+			current_Led_Pin = LED6_Pin;
+			break;
+		case 7: 
+			current_Led_GPIO_Port = LED7_GPIO_Port;
+			current_Led_Pin = LED7_Pin;
+			break;
+	}
+
+	if(htim->Instance == TIM1){
+		HAL_GPIO_TogglePin(current_Led_GPIO_Port, current_Led_Pin);
+		count++;
+	}
+	if(count % 8 == 0)  // 每个灯闪烁8次  才切换led灯
+		currentLedNum = (currentLedNum + 1) % 8;
+}
+
+
+
+
+
+
+
