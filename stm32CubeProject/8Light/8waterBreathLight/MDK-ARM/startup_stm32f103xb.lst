@@ -463,12 +463,12 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=waterlamp\startup_stm32f103xb.d -owaterlamp\startup_stm32f103xb.o 
--I.\RTE\_waterLamp -ID:\EnglishSoftware\LowEdition532MDKARM\pack\ARM\CMSIS\5.7.
-0\CMSIS\Core\Include -ID:\EnglishSoftware\LowEdition532MDKARM\pack\Keil\STM32F1
-xx_DFP\2.3.0\Device\Include --predefine="__EVAL SETA 1" --predefine="__MICROLIB
- SETA 1" --predefine="__UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --
-predefine="STM32F10X_MD SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32
-f103xb.lst startup_stm32f103xb.s
+-I.\RTE\_waterLamp -ID:\EnglishSoftware\mdk-arm\pack\ARM\CMSIS\5.7.0\CMSIS\Core
+\Include -ID:\EnglishSoftware\mdk-arm\pack\Keil\STM32F1xx_DFP\2.3.0\Device\Incl
+ude --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__
+UVISION_VERSION SETA 532" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD 
+SETA 1" --predefine="_RTE_ SETA 1" --list=startup_stm32f103xb.lst startup_stm32
+f103xb.s
 
 
 

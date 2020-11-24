@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"waterlamp\startup_stm32f103xb.o"
+"waterlamp\main.o"
+"waterlamp\stm32f1xx_it.o"
+"waterlamp\stm32f1xx_hal_msp.o"
+"waterlamp\stm32f1xx_hal_gpio_ex.o"
+"waterlamp\stm32f1xx_hal_tim.o"
+"waterlamp\stm32f1xx_hal_tim_ex.o"
+"waterlamp\stm32f1xx_hal.o"
+"waterlamp\stm32f1xx_hal_rcc.o"
+"waterlamp\stm32f1xx_hal_rcc_ex.o"
+"waterlamp\stm32f1xx_hal_gpio.o"
+"waterlamp\stm32f1xx_hal_dma.o"
+"waterlamp\stm32f1xx_hal_cortex.o"
+"waterlamp\stm32f1xx_hal_pwr.o"
+"waterlamp\stm32f1xx_hal_flash.o"
+"waterlamp\stm32f1xx_hal_flash_ex.o"
+"waterlamp\stm32f1xx_hal_exti.o"
+"waterlamp\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "waterLamp\waterLamp.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "waterLamp.map" -o waterLamp\waterLamp.axf
