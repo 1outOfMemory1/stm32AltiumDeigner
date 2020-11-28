@@ -1,0 +1,119 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.32.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: aa bb, cc, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.32.0.0
+Toolchain Path:  D:\EnglishSoftware\mdk-arm\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.32.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+G:\test\MDK-ARM\clock.uvprojx
+Project File Date:  11/25/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\EnglishSoftware\mdk-arm\ARM\ARMCC\Bin'
+Build target 'clock'
+assembling startup_stm32f103xb.s...
+compiling main.c...
+../Core/Inc/main.h(31): error:  #5: cannot open source input file "stm32f1xx_hal.h": No such file or directory
+  #include "stm32f1xx_hal.h"
+../Core/Src/main.c: 0 warnings, 1 error
+compiling stm32f1xx_it.c...
+../Core/Inc/main.h(31): error:  #5: cannot open source input file "stm32f1xx_hal.h": No such file or directory
+  #include "stm32f1xx_hal.h"
+../Core/Src/stm32f1xx_it.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_rtc.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_msp.c...
+../Core/Inc/main.h(31): error:  #5: cannot open source input file "stm32f1xx_hal.h": No such file or directory
+  #include "stm32f1xx_hal.h"
+../Core/Src/stm32f1xx_hal_msp.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_gpio_ex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_rtc_ex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rtc_ex.c: 0 warnings, 1 error
+compiling stm32f1xx_hal.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_rcc.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_rcc_ex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_gpio.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_dma.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_cortex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_pwr.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_flash.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_flash_ex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_exti.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_tim.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c: 0 warnings, 1 error
+compiling stm32f1xx_hal_tim_ex.c...
+"no source": Error:  #5: cannot open source input file "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c": No such file or directory
+../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c: 0 warnings, 1 error
+compiling system_stm32f1xx.c...
+../Core/Src/system_stm32f1xx.c(59): error:  #5: cannot open source input file "stm32f1xx.h": No such file or directory
+  #include "stm32f1xx.h"
+../Core/Src/system_stm32f1xx.c: 0 warnings, 1 error
+"clock\clock.axf" - 19 Error(s), 0 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_clock
+  D:\EnglishSoftware\mdk-arm\pack\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  D:\EnglishSoftware\mdk-arm\pack\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+Target not created.
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
