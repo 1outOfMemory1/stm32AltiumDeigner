@@ -1,0 +1,114 @@
+// 先把k4 打开 
+		HAL_GPIO_WritePin(K4_GPIO_Port, K4_Pin, GPIO_PIN_SET);
+		numberToLed(minute%10);
+		
+		HAL_Delay(100);
+		clearAll_K();
+		HAL_GPIO_WritePin(K3_GPIO_Port, K3_Pin, GPIO_PIN_SET);
+		numberToLed(minute/10);
+		
+		
+		
+		
+		//numberToLed(minute);
+		//numberToLed(hour);
+		HAL_Delay(100);
+		
+		
+		
+		
+		
+		
+	// 关闭 所有k 不显示
+		clearAll_K();
+		// 先把k4 打开 
+		HAL_GPIO_WritePin(K4_GPIO_Port, K4_Pin, GPIO_PIN_SET);
+		numberToLed(minute%10);
+		HAL_Delay(1);
+		clearAll_K();
+		// 把k3 打开 
+		HAL_GPIO_WritePin(K3_GPIO_Port, K3_Pin, GPIO_PIN_SET);
+		numberToLed(minute/10);
+		
+		HAL_Delay(1);
+		
+		clearAll_K();
+		// 先把k2 打开 
+		HAL_GPIO_WritePin(K2_GPIO_Port, K2_Pin, GPIO_PIN_SET);
+		numberToLed(hour%10);
+		HAL_Delay(1);
+		
+		clearAll_K();
+		// 把k1 打开 
+		HAL_GPIO_WritePin(K1_GPIO_Port, K1_Pin, GPIO_PIN_SET);
+		numberToLed(hour/10);
+		
+		
+		//numberToLed(minute);
+		//numberToLed(hour);
+		HAL_Delay(1);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+HAL_TIM_Base_Start_IT(&htim1);
+		
+int currentLedNum = 0;
+int count = 0;
+GPIO_TypeDef * current_Led_GPIO_Port;
+uint16_t current_Led_Pin;
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	switch(currentLedNum){
+		case 0: 
+			current_Led_GPIO_Port = LED0_GPIO_Port;
+			current_Led_Pin = LED0_Pin;
+			break;
+		case 1: 			
+			current_Led_GPIO_Port = LED1_GPIO_Port;
+			current_Led_Pin = LED1_Pin;
+			break;
+		case 2: 
+			current_Led_GPIO_Port = LED2_GPIO_Port;
+			current_Led_Pin = LED2_Pin;
+			break;
+		case 3: 
+			current_Led_GPIO_Port = LED3_GPIO_Port;
+			current_Led_Pin = LED3_Pin;
+			break;
+		case 4: 
+			current_Led_GPIO_Port = LED4_GPIO_Port;
+			current_Led_Pin = LED4_Pin;
+			break;
+		case 5: 
+			current_Led_GPIO_Port = LED5_GPIO_Port;
+			current_Led_Pin = LED5_Pin;
+			break;
+		case 6: 
+			current_Led_GPIO_Port = LED6_GPIO_Port;
+			current_Led_Pin = LED6_Pin;
+			break;
+		case 7: 
+			current_Led_GPIO_Port = LED7_GPIO_Port;
+			current_Led_Pin = LED7_Pin;
+			break;
+	}
+
+	if(htim->Instance == TIM1){
+		HAL_GPIO_TogglePin(current_Led_GPIO_Port, current_Led_Pin);
+		count++;
+	}
+	if(count % 2 == 0)  // 每个灯闪烁8次  才切换led灯
+		currentLedNum = (currentLedNum + 1) % 8;
+}		
+		
